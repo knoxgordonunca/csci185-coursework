@@ -1,11 +1,11 @@
 @font-face {
     font-family: flower;
-    src: url(/font/Wander.ttf);
+    src: url(font/Wander.ttf);
         }
 
 body {
     margin: 0;
-    background-image: url('/images/wallpaper.jpg');
+    background-image: url('images/wallpaper.jpg');
 }
 
 .navbar {
@@ -15,7 +15,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('/images/wallpaper2.jpg');
+    background-image: url('images/wallpaper2.jpg');
     color: antiquewhite;
 }
 
