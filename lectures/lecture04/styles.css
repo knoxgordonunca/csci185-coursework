@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px;
+    margin: 0px;
+    background-color: #EFD5F2;
+}
+
+header {
+    text-align: center;
+    background-color: #B36DBD;
+    margin: 0px;
+    padding: 0px;
+    color: #EFD5F2;
+}
+
+h1 {
+    margin: 0px;
+}
+
+section {
+    border: solid 3px #B36DBD;
+    background-color: #E48BF0;
+    width: 300px;
+    height: 250px;
+    margin: 5px;
+    padding: 0px;
+    color: #6B4170;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px;
+    margin: 0px;
+}
+
+img {
+    opacity: .5;
+}
+
+img:hover {
+    opacity: 1;
+}
+
+/* Your code here */
