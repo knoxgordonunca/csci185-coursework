@@ -1,0 +1,56 @@
+@font-face {
+    font-family: ubold;
+    src: url(backgroundanimationimages/univers/UniversBold.ttf);
+        }
+@font-face {
+    font-family: unorm;
+    src: url(backgroundanimationimages/univers/UniversRegular.ttf);
+        }
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: unorm;
+    color: #fda;
+    text-shadow:1px 1px 5px rgb(255, 195, 104);
+}
+
+a {
+    font-family: unorm;
+    text-decoration: none;
+    color: #cb8;
+}
+
+a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    animation: hov 2s infinite;
+}
+
+header, section {
+    padding: 0px;
+}
+
+header {
+    font-family: ubold;
+}
+
+p, li {
+    line-height: 1.5em;
+}
+
+#inspiration {
+    padding: 0px;
+}
+
+@keyframes hov {
+    0% {opacity: 100%;}
+    10% {opacity: 95%;}
+    40% {opacity: 55%;}
+    50% {opacity: 50%;}
+    60% {opacity: 55%;}
+    90% {opacity: 95%;}
+    100% {opacity: 100%;}
+        }
