@@ -1,0 +1,209 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Your CSS Code Here! */
+
+nav {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    background-color: #A87548;
+    padding-right: 1%;
+    height: 40px;
+}
+
+nav ul {
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+}
+
+nav ul a {
+    font-family: Helvetica;
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    border: solid 1px;
+    background-color: #A87548;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+header div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header div h1 {
+    font-family: Helvetica; /*  i would use a custom one but i like helvetica */
+    color: white;
+}
+
+header div img {
+    border-radius: 100%;
+}
+
+#about {
+    background-color: white;
+    margin-top: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+#about div {
+    width: 80%;
+    font-family: Helvetica;
+}
+
+#about div h2 {
+    margin-top: 0;
+}
+
+#about div p {
+    margin-bottom: 0;
+}
+
+#projects {
+    background-color: lightgray;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Helvetica;
+}
+
+#projects .project-holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 800px;
+}
+
+#projects .project-holder .card {
+    width: 300px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+#contact {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    padding-bottom: 10%;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+form {
+    width: 70%;
+}
+
+.contact ,h2,p {
+    font-family: Helvetica;
+}
+
+input[type=text] {
+    font-family: Helvetica;
+    width: 200px;
+    height: 50px;
+    padding: 12px 20px;
+    margin: 0px 10px 20px 0px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 2px 2px 10px lightgrey;
+    resize: none;
+  }
+input[type=email] {
+    font-family: Helvetica;
+    width: 200px;
+    height: 50px;
+    padding: 12px 20px;
+    margin: 0px 0px 20px 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 2px 2px 10px lightgrey;
+    resize: none;
+  }
+  textarea {
+    font-family: Helvetica;
+    width: 100%;
+    height: 150px;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 2px 2px 10px lightgrey;
+    resize: none;
+  }
+  input[type=submit] {
+    font-family: Helvetica;
+    width: 200px;
+    height: 50px;
+    padding: 15px 20px;
+    margin: 20px 0px 0px 0px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 2px 2px 10px lightgrey;
+    resize: none;
+  }
+
+  .contact-info {
+    width: 30%;
+
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+  }
+
+  .row p {
+    margin-left: 10px;
+    font-family: Helvetica;
+  }
+
+  footer {
+    background-color: lightgray;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer p {
+    margin: 0;
+  }
