@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto|Open+Sans");
+@import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css");
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#star1 {
+    position: relative;
+    width: 100px;
+   
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+    animation-name: r1;
+    animation-delay: 0s;
+    animation-duration: 4s;
+}
+
+#star2 {
+    position: relative;
+    width: 50px;
+   
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+    animation-name: r2;
+    animation-delay: .25s;
+    animation-duration: 2s;
+}
+
+#star3 {
+    position: relative;
+    width: 25px;
+   
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+    animation-name: r1;
+    animation-delay: .5s;
+    animation-duration: 1s;
+}
+
+#star4 {
+    position: relative;
+    width: 50px;
+   
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+    animation-name: r2;
+    animation-delay: 1s;
+    animation-duration: 2s;
+}
+
+#star5 {
+    position: relative;
+    width: 100px;
+   
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+    animation-name: r1;
+    animation-delay: 1.25s;
+    animation-duration: 4s;
+}
+
+#star6 {
+    position: relative;
+    width: 200px;
+   
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+    animation-name: r2;
+    animation-delay: 1.5s;
+    animation-duration: 8s;
+}
+
+
+@keyframes r1 {
+    0% {rotate: 0deg;}
+    100% {rotate: 360deg;}
+}
+
+@keyframes r2 {
+    0% {rotate: 0deg;}
+    100% {rotate: -360deg;}
+}
