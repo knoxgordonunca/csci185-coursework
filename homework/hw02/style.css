@@ -49,7 +49,7 @@ main {
 /*borders end*/
 
 main {
-    background: #333; /* change this back to #111 when everything else is done!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111 */
+    background: #111;
     grid-column-start: 2;
     overflow-y: auto;
     z-index: 3;
@@ -98,7 +98,11 @@ footer {
     border-left: solid 3.5px orange;
 }
 
-
+#sidebar a:hover {
+    color: orange;
+    background-color: #222;
+    border-left: solid 1.5px orange;
+}
 
 /********************************/
 /* Part B: Header & Nav Styling */
@@ -157,6 +161,10 @@ nav .selected {
     border-bottom: solid 3.5px orange;
 }
 
+nav a:hover {
+    border-bottom: solid 1.5px orange;
+}
+
 
 
 /*************************/
@@ -177,17 +185,41 @@ nav .selected {
 }
 
 #featured-content p {
+    margin-top: 5px;
+    margin-bottom: 5px;
     font-size: .8em;
     color: #aaa;
 }
 
 .artist-card {
     width: 100%;
-    background-color: #111;
+    background-color: #222;
     margin: 3%;
     padding: 10px;
     border-radius: 20px;
     padding-bottom: 80px;
+}
+
+.artist-card:hover {
+    background-color: #333;
+}
+
+.artist-card:hover button {
+    opacity: 100%;
+}
+
+
+.artist-card button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+    font-size: 1.5em;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    opacity: 0%;
 }
 
 .artist-card div{
@@ -201,9 +233,6 @@ nav .selected {
     width: 70%;
     border-radius: 100%;
 }
-
-
-
 
 
 /**************************/
@@ -249,13 +278,7 @@ nav .selected {
     }
 
     body {
-        overflow: hidden;
-        margin: 0px;
-        height: 100vh;
-        /* body tag is a grid */
-        display: grid;
         grid-template-columns: 0px auto;
-        grid-template-rows: auto 100px;
     }
 
     #upgrade {
