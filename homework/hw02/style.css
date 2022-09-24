@@ -1,0 +1,266 @@
+body {
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    color: #fff;
+}
+a, a:hover, a:visited, a:active { 
+    color: #fff;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/**********/
+/* Layout */
+/**********/
+aside, footer, header, nav, section, article {
+    display: flex;
+    flex-direction: column;
+}
+body {
+    overflow: hidden;
+    margin: 0px;
+    height: 100vh;
+    /* body tag is a grid */
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: auto 100px;
+}
+aside {
+    background-color: #000;
+    grid-column-start: 1;
+}
+header {
+    background: #111;
+    position: sticky;
+    top: 0px;
+}
+
+/* Uncomment to see borders:  */
+/* header, nav, article {
+    border: solid 5px teal;
+    padding: 10px;
+}
+main {
+    border: solid 5px hotpink;
+    padding: 10px;
+} */
+/*borders end*/
+
+main {
+    background: #333; /* change this back to #111 when everything else is done!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111 */
+    grid-column-start: 2;
+    overflow-y: auto;
+    z-index: 3;
+}
+
+footer {
+    background: #222;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: span 2;
+}
+
+
+/***************************/
+/* Accessories & Florishes */
+/***************************/
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 4px solid transparent;
+    border-radius: 16px;
+    background-clip: padding-box;
+    min-height: 30px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: hsla(0,0%,100%,.3);
+}
+
+/***************************/
+/* Part A: Left Navigation */
+/***************************/
+
+#sidebar h1 {
+    margin-left: 15px;
+}
+
+#sidebar a {
+    padding: 10px;
+    margin-left: 20px;
+    font-size: 1em;
+}
+
+#sidebar .selected {
+    border-left: solid 3.5px orange;
+}
+
+
+
+/********************************/
+/* Part B: Header & Nav Styling */
+/********************************/
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+header a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: solid 3.5px orange;
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-right: 20px;
+    letter-spacing: 4px;
+    font-size: .75em;
+}
+
+header a:hover {
+    background-color: #333;
+    border: solid 3.5px white;
+}
+
+
+
+/* nav */
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    padding: 20px;
+    
+}
+
+nav a {
+    margin-right: 20px;
+    letter-spacing: 4px;
+    font-size: .75em;
+}
+
+nav .selected {
+    border-bottom: solid 3.5px orange;
+}
+
+
+
+/*************************/
+/* Part C: Artists Panel */
+/*************************/
+
+/* Your Code Here.
+   For the desktop view, there should be 5 cards per row.
+*/
+#featured-content {
+    display: grid;
+    grid-template-columns: 18.6% 18.6% 18.6% 18.6% 18.6%;
+    grid-column-gap: 1.5%;
+}
+
+#featured-content h2, p {
+    margin: 0;
+}
+
+#featured-content p {
+    font-size: .8em;
+    color: #aaa;
+}
+
+.artist-card {
+    width: 100%;
+    background-color: #111;
+    margin: 3%;
+    padding: 10px;
+    border-radius: 20px;
+    padding-bottom: 80px;
+}
+
+.artist-card div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.artist-card img {
+    width: 70%;
+    border-radius: 100%;
+}
+
+
+
+
+
+/**************************/
+/* Part D: Responsive UIs */
+/**************************/
+
+/* Your Code Here */
+
+@media screen and (max-width: 1000px) {
+    /* 
+        Tablet Display: 3 cards per row!
+    
+    */
+
+    #featured-content {
+        display: grid;
+        grid-template-columns: 31.8% 31.8% 31.8%;
+        grid-column-gap: 1.5%;
+    }
+
+    .artist-card {
+        padding-bottom: 50px;
+    }
+
+}
+
+
+@media screen and (max-width: 700px) {
+    /* Mobile Display 
+        * 2 cards per row
+        * The aside panel and "Upgrade" button should no longer be visible.
+        * There should only be a 1-column layout.
+    */
+
+    #featured-content {
+        display: grid;
+        grid-template-columns: 48% 48%;
+        grid-column-gap: 1.5%;
+    }
+
+    .artist-card {
+        padding-bottom: 0px;
+    }
+
+    body {
+        overflow: hidden;
+        margin: 0px;
+        height: 100vh;
+        /* body tag is a grid */
+        display: grid;
+        grid-template-columns: 0px auto;
+        grid-template-rows: auto 100px;
+    }
+
+    #upgrade {
+        opacity: 0%;
+    }
+}
+
+

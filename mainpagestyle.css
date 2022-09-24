@@ -15,6 +15,7 @@ body {
     font-family: unorm;
     color: #fda;
     text-shadow:1px 1px 5px rgb(255, 195, 104);
+    padding-left: 20px;
 }
 
 a {
