@@ -1,5 +1,7 @@
 body {
     margin: 0px;
+    /* background-image: url("spike.jpg"); */
+    background-size: 100vh;
 }
 main {
     height: 100vh;
