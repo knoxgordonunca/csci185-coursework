@@ -17,9 +17,28 @@ let objectOriginY = 0;
 let circleSize = 20;
 let artificialGravity = 0;
 let color = 0;
+let backColor = 0;
 let colorCounter = 0;
 let clickCount = 0;
 let i = 0;
+let pulserSize = 0;
+let pleaseDrawBox = 0;
+
+//Storage
+let startX = 0;
+let startY = 0;
+let endX = 0;
+let endY = 0;
+const memory = [];
+const animating = [];
+
+//Background Storage
+let backX = 0;
+let backY = 0;
+let backW = 0;
+const memory2 = [];
+const backing = [];
+
 
 const clickCounter = ev => {
     clickCount +=1
@@ -36,17 +55,20 @@ const mouseLogger = ev => {
         mpsY1 = mouseY;
         objectOriginX = mouseX;
         objectOriginY = mouseY;
+        startX = mouseX;
+        startY = mouseY;
         //Console Log For Easy Data Readablilty
         console.log('Mouse Position 1:','   X:',mpsX1,'   Y:',mpsY1,);
         //Reset Variables
         speedX = 0;
         speedY = 0;
         circleSize = 20;
+        pulserSize = 0
         artificialGravity = 0;
         //document.querySelector('#step').textContent = 'position 2';
 
         //Create Click One Guide Circle
-        circle(mpsX1,mpsY1,10);
+        // circle(mpsX1,mpsY1,10);
         //Advances Mouse Counter
         mouseCounter = 1;
     }
@@ -56,11 +78,13 @@ const mouseLogger = ev => {
         //Position Assignment
         mpsX2 = mouseX;
         mpsY2 = mouseY;
+        endX = mouseX;
+        endY = mouseY;
         //Console Log For Easy Data Readablilty
         console.log('Mouse Position 2:','   X:',mpsX2,'   Y:',mpsY2,);
         //Create Click Two Guide Circle And Traj Line
-        line(mpsX1,mpsY1, mouseX,mouseY);
-        circle(mpsX2,mpsY2,10);
+        // line(mpsX1,mpsY1, mouseX,mouseY);
+        // circle(mpsX2,mpsY2,10);
         //DETERMINES OBJECT SPEED
         speedX = (mpsX2-mpsX1)/10;
         speedY = (mpsY2-mpsY1)/10;
@@ -78,6 +102,10 @@ const mouseLogger = ev => {
         //Console Log For Easy Data Readablilty
         console.log('FINAL SPEED');
         console.log('Speed:','   X:',speedX,'   Y:',speedY,);
+        startX=0;
+        startY=0;
+        endX=0;
+        endY=0;
         //document.querySelector('#step').textContent = 'position 1';
 
         //Advances Mouse Counter
@@ -94,38 +122,124 @@ function setup() {
     createCanvas(canvasWidth, canvasHeight);
 };
 
+
+
+fill('black');
+
 //Function Does All Drawing In Program
 function draw() {
-    clear();
+    frameRate(25);
+     clear();
+
+     if (pleaseDrawBox < 1) {
+        drawBoxes();
+        pleaseDrawBox +=1;
+    };
+    if (backing.length > 0) {
+        memory2.push(backing.shift());
+    };
+    for(i = 0; i<memory2.length; i++) {
+        fill(memory2[i].backColor);
+        square(memory2[i].backX, memory2[i].backY, memory2[i].backW)
+    };
+
+    //Transfer cirle data to memory
     projectile();
-    // xParticle1();
-    console.log(circles.length);
-    for(i = 0; i<circles.length; i++) {
-        fill(circles[i].color);
-        circle(circles[i].x, circles[i].y, 10);
-        //console.log(circles[i]);
-    }
-    //xParticle1();
+    console.log('confirm');
+    if (animating.length > 0) {
+        memory.push(animating.shift());
+    };
+
+    //Draw Guides
+    if (startX != 0) {
+        fill('black');
+        circle(startX,startY,20);
+    };
+    if (endX != 0) {
+        line(startX, startY, endX, endY);
+        circle(endX,endY,20);
+    };
+    for(i = 0; i<memory.length; i++) {
+        fill(memory[i].color);
+        circle(memory[i].x, memory[i].y, 20)
+    };
+    
+    
+
+    //DRAW STUFF ON TOP HERE
+
+    circle(objectOriginX,objectOriginY,pulserSize);
+    pulserSize += (Math.random()*10)-5.5;
+    
 };
 
+
+
+
+
+
 //Function for Projectile Generation and 
+
+function drawBoxes(){
+    for (let j = 0; j < 50; j++) {
+        if (colorCounter == 0) {
+            backColor = '#1660FF';
+            colorCounter = 1;
+        }
+        else if (colorCounter == 1) {
+            backColor = '#1456E5';
+            colorCounter = 2;
+        }
+        else if (colorCounter == 2) {
+            backColor = '#124DCC';
+            colorCounter = 3;
+        }
+        else if (colorCounter == 3) {
+            backColor = '#1043B2';
+            colorCounter = 4;
+        }
+        else if (colorCounter == 4) {
+            backColor = '#0D3999';
+            colorCounter = 5;
+        }
+        else if (colorCounter == 5) {
+            backColor = '#0B307F';
+            colorCounter = 0;
+        }
+        fill(backColor);
+        const backX = Math.random() * canvasWidth-200;
+        const backY = Math.random() * canvasHeight-200;
+        const backW = Math.random() * 900;
+        square(backX, backY, backW);
+        console.log(backX, backY, backW);
+        
+
+        backing.push({
+            bx: backX,
+            by: backW,
+            bw: backW,
+            bcolor: backColor,
+        })
+}
+};
+
 function projectile() {
     if (mouseCounter == 2) {
-    //Establishes Color and Beginning Position and Speed
-    //fill(color);
-    //circle(objectOriginX, objectOriginY, circleSize);
-    circles.push({
+    //Remember projectile
+    animating.push({
         x: objectOriginX,
         y: objectOriginY,
         color: color,
-    });
+    })
+    //Establishes Color and Beginning Position and Speed
+    //fill(color);
+    //circle(objectOriginX, objectOriginY, circleSize)
     //Created Motion
     objectOriginX += speedX + ((Math.random()*20)-10);
     objectOriginY += speedY + artificialGravity + ((Math.random()*20)-10);
     //Console Log For Position During Motion
     console.log('X:', objectOriginX, 'Y:', objectOriginY);
     //Increases Ball Size
-    //circleSize +=1;
     //Artificial Gravity
     artificialGravity += 1+ (artificialGravity/(10^100000));
     }
@@ -156,7 +270,5 @@ function projectile() {
     }
 };
 
-// function xParticle1() {
-// clear ();
-// }
+
 
