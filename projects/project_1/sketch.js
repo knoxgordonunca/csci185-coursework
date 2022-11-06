@@ -124,12 +124,12 @@ function setup() {
 
 
 
-fill('black');
+
 
 //Function Does All Drawing In Program
 function draw() {
     frameRate(25);
-     clear();
+     //clear();
 
      if (pleaseDrawBox < 1) {
         drawBoxes();
@@ -137,10 +137,6 @@ function draw() {
     };
     if (backing.length > 0) {
         memory2.push(backing.shift());
-    };
-    for(i = 0; i<memory2.length; i++) {
-        fill(memory2[i].backColor);
-        square(memory2[i].backX, memory2[i].backY, memory2[i].backW)
     };
 
     //Transfer cirle data to memory
@@ -222,6 +218,8 @@ function drawBoxes(){
         })
 }
 };
+
+
 
 function projectile() {
     if (mouseCounter == 2) {
