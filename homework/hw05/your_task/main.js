@@ -61,7 +61,7 @@ function displayArtist(data) {
         <section id="artist">
             <section class="artist-card" id="${data[0].id}">
                 <div>
-                    <img src="${data[0].image_url}">
+                    <img src="${data[0].image_url}" alt="image of ${data[0].name}">
                     <h2>${data[0].name}</h2>
                     <div class="footer">
                         <a href="spotify_url">
@@ -81,7 +81,7 @@ function displayAlbums(data) {
     const template = `
         <section class="album-card" id="${data[i].id}">
         <div>
-            <img src="${data[i].image_url}">
+            <img src="${data[i].image_url}" alt="${data[0].name} album cover">
             <h2>${data[i].name}</h2>
             <div class="footer">
                 <a href="${data[i].spotify_url}" target="_blank">
@@ -100,7 +100,7 @@ function displaySongs(data) {
     for (i=0; i<5; i++) {    
     const template = `
         <section class="track-item preview">
-            <img src="${data[i].album.image_url}">
+            <img src="${data[i].album.image_url}" alt="album cover for ${data[0].name}">
             <i class="fas play-track fa-play" aria-hidden="true"></i>
             <div class="label">
                 <h2>${data[i].name}</h2>
